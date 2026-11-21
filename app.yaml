@@ -1,0 +1,34 @@
+kind: wasmer.io/App.v0
+name: db-81ca36c4
+owner: dumbnudnf1
+package: .
+env:
+  DB_DRIVER: mysql
+  ALLOW_REGISTER: 'true'
+  JWT_SECRET: wo0Z5QPJ5YXMWs8uofR956h5-AWjZvY7QvJ-H01YQmc
+capabilities:
+  database:
+    engine: mysql
+app_id: da_RMMIrt4U1yMD
+annotations:
+  anybuild.run/config:
+    commands:
+      start: node server/index.js
+    edgejs_enable: true
+    edgejs_precompile: true
+    name: out
+    node_build_command: npm run build
+    node_install_inputs:
+    - package.json
+    node_package_manager: npm
+    node_package_name: math-score-manager
+    node_remove_native_binaries: true
+    node_server: node
+    npm_version: '11'
+    services:
+    - engine: mysql
+      name: database
+  anybuild.run/provider: node
+  anybuild.run/version: 0.33.3
+  wasmer.io/version: 7.5.0
+enableDatabase: true
